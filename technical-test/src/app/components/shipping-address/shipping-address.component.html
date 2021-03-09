@@ -1,0 +1,175 @@
+<div class="back">
+  <a routerLink="/home"><i class="fas fa-home"></i></a>
+</div>
+<div class="container">
+  <div class="header__form"><h3>DIRECCIÓN DE ENVÍO</h3></div>
+  <form [formGroup]="shippingForm" (ngSubmit)="saveForm()">
+    <div class="content__form">
+      <!-- Name field -->
+      <div class="field">
+        <div class="icon"><i class="fas fa-user"></i></div>
+        <label>
+          <input class="form-control"
+                 type="text"
+                 placeholder="Nombre"
+                 formControlName="name"
+                 required>
+        </label>
+        <small *ngIf="invalidName" class="text-danger">
+          El nombre debe tener mínimo 3 caracteres.
+        </small>
+      </div>
+      <!-- Lastname field -->
+      <div class="field">
+        <div class="icon"><i class="fas fa-user"></i></div>
+        <label>
+          <input class="form-control"
+                 type="text"
+                 placeholder="Apellidos"
+                 formControlName="lastname"
+                 required>
+        </label>
+        <small *ngIf="invalidLastName" class="text-danger">
+          El apellido debe tener mínimo 3 caracteres.
+        </small>
+      </div>
+      <!-- Email field -->
+      <div class="field">
+        <div class="icon"><i class="fas fa-envelope"></i></div>
+        <label>
+          <input class="form-control"
+                 type="email"
+                 placeholder="Correo Electrónico"
+                 formControlName="email"
+                 required>
+        </label>
+        <small *ngIf="invalidLastEmail" class="text-danger">
+          Ingrese un correo válido.
+        </small>
+      </div>
+      <!-- Phone field -->
+      <div class="field">
+        <div class="icon"><i class="fas fa-phone-alt"></i></div>
+        <label>
+          <input class="form-control"
+                 type="number"
+                 placeholder="Número de teléfono"
+                 formControlName="phone"
+                 required>
+        </label>
+        <small *ngIf="invalidLastPhone" class="text-danger">
+          Ingrese un teléfono válido.
+        </small>
+      </div>
+      <!-- Postal code field -->
+      <div class="field">
+        <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+        <label>
+          <select formControlName="postalCode" name="postalCode" required>
+            <option value="" disabled>Seleccione...</option>
+            <option value="11000">11000</option>
+            <option value="89000">89000</option>
+          </select>
+        </label>
+        <small *ngIf="invalidPostal" class="text-danger">
+          Debe seleccionar un código postal.
+        </small>
+      </div>
+      <!-- Suburb field -->
+      <div class="field">
+        <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+        <label *ngIf="!selectSuburb">
+          <input class="form-control"
+                 type="text"
+                 placeholder="Colonia"
+                 formControlName="suburbText"
+                 readonly>
+        </label>
+        <label *ngIf="selectSuburb">
+          <select formControlName="suburbSelect" name="suburbSelect">
+            <option value="" disabled>Seleccione...</option>
+            <option *ngFor="let colonie of arraySuburb" >{{colonie}}</option>
+          </select>
+        </label>
+      </div>
+      <!-- Region field -->
+      <div class="field">
+        <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+        <label>
+          <input class="form-control"
+                 type="text"
+                 placeholder="Estado/Region"
+                 formControlName="region"
+                 readonly>
+        </label>
+      </div>
+      <!-- City field -->
+      <div class="field">
+        <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+        <label>
+          <input class="form-control"
+                 type="text"
+                 placeholder="Ciudad"
+                 formControlName="city"
+                 readonly>
+        </label>
+      </div>
+      <!-- Municipality field -->
+      <div class="field">
+        <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+        <label>
+          <input class="form-control"
+                 type="text"
+                 placeholder="Delegación o municipio"
+                 formControlName="municipality"
+                 readonly>
+        </label>
+      </div>
+      <!-- Street field -->
+      <div class="field">
+        <div class="icon"><i class="fas fa-road"></i></div>
+        <label>
+          <input class="form-control"
+                 type="text"
+                 placeholder="Calle"
+                 formControlName="street"
+                 required>
+        </label>
+        <small *ngIf="invalidStreet" class="text-danger">
+          Ingrese una calle válida.
+        </small>
+      </div>
+    </div>
+    <div class="footer__form">
+      <div class="actions__form">
+        <button class="btn address__book">Libreta de direcciones</button>
+        <button class="btn save">Guardar</button>
+        <div class="check__address">
+          <label>
+            <input class="form-control"
+                   type="checkbox"
+                   formControlName="useAddress">
+            Utilizar como dirección de facturación
+          </label>
+        </div>
+      </div>
+      <div class="wrapper__messages">
+        <div *ngIf="invalidForm" class="form-invalid messages ">
+          <p>Complete el formulario</p>
+          <i class="fas fa-exclamation-triangle"></i>
+        </div>
+        <div *ngIf="shippingSuccess" class="shipping__success messages">
+          <p>Datos enviados exitosamente</p>
+          <i class="fas fa-check"></i>
+        </div>
+        <div *ngIf="shippingError" class="shipping__error messages">
+          <p>Hubo un error al enviar</p>
+          <i class="fas fa-times"></i>
+        </div>
+      </div>
+
+
+
+    </div>
+  </form>
+</div>

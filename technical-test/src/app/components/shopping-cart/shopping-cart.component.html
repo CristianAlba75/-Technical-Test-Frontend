@@ -1,0 +1,40 @@
+<div class="back">
+  <a routerLink="/home"><i class="fas fa-home"></i></a>
+</div>
+<div class="container">
+  <div class="header__cart"><h3>RESUMEN DE LA ORDEN</h3></div>
+  <div class="content__cart">
+    <div *ngFor="let product of dataProducts" class="item">
+      <div class="image__item item__child">
+        <picture>
+          <img [src]="product.image" [alt]="product.name">
+        </picture>
+      </div>
+      <div class="text__item item__child">
+        <p>{{product.name}}</p>
+      </div>
+      <div class="price__item item__child">
+        <b>${{product.price | number:'3.2-5'}}</b>
+      </div>
+    </div>
+    <div class="actions">
+      <button class="btn__send">Editar</button>
+    </div>
+    <div class="subtotal">
+      <div class="row">
+        <label class="legend">SUBTOTAL</label>
+        <label class="value">${{subtotal | number:'3.2-5'}}</label>
+      </div>
+      <div class="row">
+        <label>ENVÍO</label>
+        <label>A calcular</label>
+      </div>
+    </div>
+    <div class="total">
+      <div class="row">
+        <label>TOTAL</label>
+        <label>${{total | number:'3.2-5'}}</label>
+      </div>
+    </div>
+  </div>
+</div>

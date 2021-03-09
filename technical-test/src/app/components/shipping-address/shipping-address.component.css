@@ -1,0 +1,192 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html{
+  font-size: 62.5%;
+}
+
+body{
+  font-size: 1.6rem;
+  margin-bottom: 3rem;
+}
+h3{
+  font-size: 0.7rem;
+}
+
+.container{
+  width: 90%;
+  margin: 1rem auto;
+  border: 1px solid #dbd9d9;
+}
+
+.header__form{
+  height: 2.5rem;
+  text-align: center;
+  padding-top: 0.7rem;
+  border-bottom: 2px solid black;
+}
+
+.content__form{
+  width: 95%;
+  margin: 1rem auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.field{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.content__form .field{
+  margin-top: 1rem;
+  height: 1.6rem;
+}
+
+.field .icon{
+  background-color: black;
+  color: white;
+  width: 15%;
+  text-align: center;
+  font-size: 0.8rem;
+  padding-top: 0.2rem;
+}
+.field label{
+  width: 85%;
+}
+
+.field input, select{
+  width: 100%;
+  height: 1.8rem;
+  padding-left: 0.5rem;
+  font-size: 0.6rem;
+  border-radius: 0px;
+  border: 1px solid #e0e0e0;
+}
+
+.footer__form{
+  width: 93%;
+  display: flex;
+  flex-wrap: wrap;
+  margin:  2rem auto;
+}
+
+.actions__form{
+  width: 100%;
+}
+
+ .actions__form .btn{
+  background-color: black;
+  color: white;
+  font-size: 0.7rem;
+  height: 1.6rem;
+}
+
+.actions__form .address__book{
+  width: 9.5rem;
+}
+
+.actions__form .save{
+  width: 6rem;
+  margin-left: 0.5rem;
+}
+
+.actions__form .check__address{
+  margin-top: 1rem;
+  font-size: 0.6rem;
+  margin-left: 0.5rem;
+}
+
+.text-danger{
+  font-size: 0.5rem;
+  color: darkred;
+}
+
+.wrapper__messages{
+  margin-top: 2rem;
+  width: 100%;
+  height: 3rem;
+}
+
+.messages{
+  padding: 0.2rem;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 0.5rem;
+  font-size: 0.8rem;
+  color: black;
+}
+
+.form-invalid{
+  background-color: #f6ce5a;
+
+}
+
+.form-invalid i{
+  font-size: 2rem;
+  color: #ba8b02;
+}
+
+.shipping__success{
+  background-color: #a2dd7d;
+}
+
+.shipping__success i{
+  font-size: 2rem;
+  color: #0eba02;
+}
+
+.shipping__error{
+  background-color: #cd5c5c;
+}
+
+.shipping__error i{
+  font-size: 2rem;
+  color: #ba0202;
+}
+
+.back{
+  width: 90%;
+  margin: 0 auto;
+  font-size: 1.8rem;
+  display: flex;
+  justify-content: flex-end;
+  padding: 0.2rem;
+}
+
+.back a{
+  cursor: pointer;
+  color: #918e8e;
+}
+
+.back a:hover{
+  color: #e32976;
+}
+
+@media (min-width:800px){
+  .field{
+    width: 48%;
+  }
+  .actions__form{
+    width: 50%;
+  }
+
+  .wrapper__messages{
+    margin-top: 0;
+    width: 50%;
+  }
+}
+
+
+
+
+
